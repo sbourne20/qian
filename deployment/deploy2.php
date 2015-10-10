@@ -18,7 +18,7 @@
 $LOCAL_ROOT         = "/path/to/repo/parent/directory";
 $LOCAL_REPO_NAME    = "REPO_NAME";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
-$REMOTE_REPO        = "git@github.com:username/reponame.git";
+$REMOTE_REPO        = "git@giddddthub.com:username/reponame.git";
 $BRANCH             = "masdddter";
 
 if ( $_POST['payload'] ) {
