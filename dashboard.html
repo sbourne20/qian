@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
+Version: 4.1.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js" > <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js" > <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js" ng-app="qianApp">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Metronic | Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+    <link href="./assets/global/plugins/mapplic/mapplic/mapplic.css" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE LEVEL PLUGIN STYLES -->
+    <!-- BEGIN PAGE STYLES -->
+    <link href="./assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/admin/layout7/css/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/admin/layout7/css/custom.css" rel="stylesheet" type="text/css"/>
+
+
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="clearfix">
+
+
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="index.html">
+                <img src="./assets/admin/layout7/img/logohv.png" alt="logo" class="logo-default"/>
+            </a>
+        </div>
+        <!-- END LOGO -->
+
+        <!-- BEGIN TOP NAVIGATION MENU -->
+
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+
+<!-- BEGIN CLEARFIX -->
+<div class="clearfix"></div>
+<!-- END CLEARFIX -->
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container page-container-bg-solid">
+    <!-- BEGIN CONTENT -->
+    <div class="container-fluid container-lf-space page-content">
+        <!-- BEGIN WIDGETS -->
+        <div class="row">
+
+            <div class="row margin-top-10">
+
+
+                    <!-- BEGIN PORTLET-->
+                <div class="col-md-6 col-sm-12">
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject theme-font bold uppercase">Kurs Hari Ini</span>
+
+                            </div>
+                        </div>
+                        <div ng-controller = "currencyController"  class="portlet-body">
+                            <jqx-grid jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject theme-font bold uppercase">Pergerakan Mata Uang</span>
+
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                        <input type="radio" name="options" class="toggle" id="option1">Hari Ini</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">1 Minggu</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">1 Bulan</label>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div id='chartContainer' style="width:100%; height:403px"></div>
+
+
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+                </div>
+                    <!-- END PORTLET-->
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="row widget-bg-color-white no-space margin-bottom-30">
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe widget-subscribe-quote widget-bg-color-purple">
+                        <h2 class="widget-subscribe-title widget-title-color-purple-dark text-uppercase">Prosedur Transaksi Homeeah Valas</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-purple-light">5 Prosedur yang memudahkan anda untuk bertransaksi dengan kami</p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe">
+                        <span class="widget-subscribe-no">1</span>
+                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Check <br> Rate</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Pastikan Anda men-cek Rate yang akan dibeli / dijual. Rate Jual adalah Rate kami menjual kepada Anda, sedangkan Rate Beli adalah Rate kami membeli dari Anda.</p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe widget-subscribe-border">
+                        <span class="widget-subscribe-no">2</span>
+                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Konfirmasi <br/> Transaksi</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Konfirmasikan Rate Jual/Beli Anda kepada Treasury Dealer kami. Anda akan mendapatkan Bukti konfirmasi yang ditanda-tangani oleh Anda terhadap transaksi yang akan dilakukan.</p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe widget-subscribe-border-top">
+                        <span class="widget-subscribe-no">3</span>
+                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Siapkan Data &<br/>Isi Form</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Siapkan data-data yang diperlukan seperti : <b><u>KTP</u> & <u>DOKUMEN UNDERLYING</u></b>. Untuk Dokumen Underlying dibutuhkan apabila transaksi melebihi USD10.000 Per bulan. Kemudian Isi Form yang diperlukan untuk persetujuan transaksi.</p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe widget-subscribe-border-top">
+                        <span class="widget-subscribe-no">4</span>
+                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Lakukan<br/> Transaksi</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Lakukan Pembayaran (Untuk Beli) atau Penyerahan Uang Asing (Untuk Jual) terlebih dahulu, sebelum kami dapat memproses transaksi.</p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+                <div class="col-md-3 col-sm-6 no-space">
+                    <!-- BEGIN WIDGET SUBSCRIBE -->
+                    <div class="widget-subscribe widget-subscribe-border-top">
+                        <span class="widget-subscribe-no">5</span>
+                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Selesai<br/> Transaksi !</h2>
+                        <p class="widget-subscribe-subtitle widget-title-color-dark-light"><u><b>PASTIKAN</b></u> Anda men-cek Uang yang diterima sebelum meninggalkan meja counter kami, <u><b>SEMUA KELUHAN</b></u> yang terjadi setelah <u><B>MENINGGALKAN</B></u> meja counter, tidak akan <b><u>DILAYANI.</u></b></p>
+                    </div>
+                    <!-- END WIDGET SUBSCRIBE -->
+                </div>
+            </div>
+
+        </div>
+        <!-- END WIDGETS -->
+    </div>
+    <!-- END CONTENT -->
+
+
+
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="page-footer-inner container-fluid container-lf-space">
+        <p class="page-footer-copyright"><b>2015 (c) PT. HOMEEAH VALAS INTI</b><br>Wisma BSG Lt. 3A - Jl. Abdul Muis No. 40. Jakarta Pusat 10160<br>
+            Phone: 021-3614267    Fax: 021-3614266
+
+        </p>
+    </div>
+    <div class="go2top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="./assets/global/plugins/respond.min.js"></script>
+<script src="./assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+
+<!-- angular -->
+<script type="text/javascript" src="./assets/global/plugins/angularjs/angular.min.js"></script>
+<!-- end of angular -->
+<script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+<!-- jqwidget -->
+<script src="./assets/global/plugins/jqwidgets/jqxcore.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqwidgets/jqxangular.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="./assets/global/plugins/jqwidgets/styles/jqx.base.css" type="text/css" />
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.sort.js"></script>
+
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdraw.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxchart.core.js"></script>
+<!-- end jqwidget -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="./assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/mapplic/js/hammer.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/mapplic/js/jquery.easing.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/mapplic/js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/mapplic/mapplic/mapplic.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript" ></script>
+<script src="./assets/global/plugins/amcharts/ammap/maps/js/continentsLow.js" type="text/javascript"></script>
+<script src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+<script src="./assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+<script src="./assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="./assets/admin/layout7/scripts/layout.js" type="text/javascript"></script>
+<script src="./assets/admin/layout7/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/widgets.js" type="text/javascript"></script>
+
+
+
+<script src="./assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="./assets/admin/layout2/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="./assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
+
+
+
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    // jQuery(document).ready(function() {
+    //Metronic.init(); // init metronic core componets
+    //Layout.init(); // init layout
+    //QuickSidebar.init(); // init quick sidebar
+    //Index.init(); // init index page
+    //Widgets.init(); // init widgets
+    //currencyWindow.init();
+    // });
+
+
+</script>
+<script src="app.js"></script>
+<script src="./assets/scripts/currency/currency.js"></script>
+<script src="./assets/scripts/chmovement/chmovement.js"></script>
+
+<script>
+    jQuery(document).ready(function() {
+        chmovementWindow.init();
+    });
+</script>
+
+<!-- END JAVASCRIPTS -->
+</body>
+
+<!-- END BODY -->
+</html>

@@ -4,17 +4,16 @@
     angular
         .module('qianApp',["jqwidgets"])
         .controller('currencyController', currencyController);
-        //.factory('currencyService', currencyService);
 
     currencyController.$inject = ['$http', '$scope'];
 
 
-    function currencyController($http, $scope, currencyService) {
+    function currencyController($http, $scope) {
         var vm = this;
         $scope.createWidget = false;
         $http({
             method: 'get',
-            url: 'https://sgproject001.bit-clicks.com:443/rest/qian/currency?filter=stats%3D%27ACTIVE%27',
+            url: 'https://sgproject001.bit-clicks.com:443/rest/qian/_proc/retrieve_rates',
             headers: {
                 'X-DreamFactory-Application-Name': "myapp"
             },
@@ -39,7 +38,7 @@
             {
                 datatype: "jsonp",
                 datafields: [
-                    { name: 'currency', type: 'string' },
+                    { name: 'curname', type: 'string' },
                     { name: 'price_buy', type: 'int' },
                     { name: 'price_sell', type: 'int' },
                 ],
@@ -53,7 +52,7 @@
                 source: dataAdapter,
                 columnsresize: true,
                 columns: [
-                    { text: 'Mata Uang', datafield: 'currency', width: '60%' },
+                    { text: 'Mata Uang', datafield: 'curname', width: '60%' },
                     { text: 'Beli', datafield: 'price_buy', width: '20%', cellsalign: 'right', cellsformat: 'd' },
                     { text: 'Jual', datafield: 'price_sell', width: '20%', cellsalign: 'right', cellsformat: 'd' }
                 ]
