@@ -62,6 +62,7 @@ var chmovementWindow = function() {
                  type: 'date',
                  baseUnit: 'day',
                  valuesOnTicks: true,
+                 displayText: "Date",
                  labels: {
                      formatFunction: function (value) {
                          return value.getDate();
