@@ -39,6 +39,7 @@
                 datatype: "jsonp",
                 datafields: [
                     { name: 'curname', type: 'string' },
+                    { name: 'stamp_dt', type: 'string' },
                     { name: 'price_buy', type: 'int' },
                     { name: 'price_sell', type: 'int' },
                 ],
@@ -46,13 +47,17 @@
                 localdata: data
             };
             var dataAdapter = new $.jqx.dataAdapter(source);
+
+
+
             $scope.gridSettings =
             {
                 width: "100%",
                 source: dataAdapter,
                 columnsresize: true,
                 columns: [
-                    { text: 'Mata Uang', datafield: 'curname', width: '60%' },
+                    { text: 'Mata Uang', datafield: 'curname', width: '30%' },
+                    { text: 'Tanggal', datafield: 'stamp_dt', width: '30%' },
                     { text: 'Beli', datafield: 'price_buy', width: '20%', cellsalign: 'right', cellsformat: 'd' },
                     { text: 'Jual', datafield: 'price_sell', width: '20%', cellsalign: 'right', cellsformat: 'd' }
                 ]
