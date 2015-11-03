@@ -92,12 +92,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="portlet-title">
                             <div class="caption caption-md">
                                 <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase">Kurs Hari Ini</span>
+                                <span class="caption-subject theme-font bold uppercase"><span style="font-size: 30px;">Kurs Hari Ini</span></span>
 
                             </div>
                         </div>
-                        <div ng-controller = "currencyController"  class="portlet-body">
-                            <jqx-grid jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>
+                        <div  ng-controller = "currencyDashController"  class="portlet-body">
+                            <jqx-grid style="font-size: 30px;" jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>
                         </div>
                     </div>
                     <!-- END PORTLET-->
@@ -108,7 +108,77 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
 
         </div>
+        <div class="row">
 
+            <div class="row margin-top-10">
+
+
+                <!-- BEGIN PORTLET-->
+                <!-- BEGIN PORTLET-->
+                <div class="portlet light3 ">
+                    <div class="portlet-title">
+                        <div class="caption caption-md">
+                            <i class="icon-bar-chart theme-font hide"></i>
+                            <span class="caption-subject theme-font bold uppercase"><span style="font-size: 30px;">Metro TV</span></span>
+
+                        </div>
+                    </div>
+                    <div align="center" class="portlet-body">
+                        <div class="play">
+                            <script type="text/javascript">
+
+                                var _gaq = _gaq || [];
+                                _gaq.push(['_setAccount', 'UA-48888188-7']);
+                                _gaq.push(['_trackPageview']);
+
+                                (function() {
+                                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                })();
+
+                            </script>
+
+
+                            <script type="text/javascript" src="http://p.metrotvnews.com/jwplayer/6.10/jwplayer.js"></script>
+                            <script>jwplayer.key="H/pqAxzom12rkV5IEvpO8o7MbXk59o+kkmHRpA==";</script>
+                            <div id="streaming_wrapper" style="display: block; width: 640px; height: 360px;"><a id="beforeswfanchor0" href="#streaming" tabindex="0" title="Flash start" style="border:0;clip:rect(0 0 0 0);display:block;height:1px;margin:-1px;outline:none;overflow:hidden;padding:0;position:absolute;width:1px;" data-related-swf="streaming"></a><object type="application/x-shockwave-flash" data="http://p.metrotvnews.com/jwplayer/6.10/jwplayer.flash.swf" width="100%" height="100%" bgcolor="#000000" id="streaming" name="streaming" class="jwswf swfPrev-beforeswfanchor0 swfNext-afterswfanchor0" tabindex="0"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="always"><param name="seamlesstabbing" value="true"><param name="wmode" value="opaque"></object><a id="afterswfanchor0" href="#streaming" tabindex="0" title="Flash end" style="border:0;clip:rect(0 0 0 0);display:block;height:1px;margin:-1px;outline:none;overflow:hidden;padding:0;position:absolute;width:1px;" data-related-swf="streaming"></a><div id="streaming_aspect" style="display: none;"></div><div id="streaming_jwpsrv" style="position: absolute; top: 0px; z-index: 10;"><div class="afs_ads" style="width: 1px; height: 1px; position: absolute; background: transparent;">&nbsp;</div></div></div>
+
+
+                            <script type="text/javascript">
+                                jwplayer("streaming").setup({
+                                    sources: [{
+                                        file: "http://p.metrotvnews.com/liveedge/metro/default"
+                                    },{
+                                        file: "http://edge.metrotvnews.com:1935/live-edge/smil:metro.smil/playlist.m3u8"
+                                    }],
+                                    rtmp: {
+                                        bufferlength: 3
+                                    },
+                                    fallback: true,
+                                    height: 360,
+                                    primary: "flash",
+                                    width: 640,
+                                    autostart: "true",
+                                    androidhls: true,
+                                    startparam: "start",
+                                    //aspectratio: "16:9",
+                                    stretching: "exactfit"
+                                });
+                            </script>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END PORTLET-->
+
+
+                <!-- END PORTLET-->
+
+            </div>
+
+        </div>
 
 
 
@@ -293,12 +363,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
 </script>
 <script src="app.js"></script>
-<script src="./assets/scripts/currency/currency.js"></script>
-<script src="./assets/scripts/chmovement/chmovement.js"></script>
+<script src="./assets/scripts/currency/currency_dash.js"></script>
 
 <script>
     jQuery(document).ready(function() {
-        chmovementWindow.init();
+
     });
 </script>
 

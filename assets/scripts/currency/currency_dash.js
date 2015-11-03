@@ -3,12 +3,12 @@
 
     angular
         .module('qianApp',["jqwidgets"])
-        .controller('currencyController', currencyController);
+        .controller('currencyDashController', currencyDashController);
 
-    currencyController.$inject = ['$http', '$scope'];
+    currencyDashController.$inject = ['$http', '$scope'];
 
 
-    function currencyController($http, $scope) {
+    function currencyDashController($http, $scope) {
         var vm = this;
         $scope.createWidget = false;
         $http({
@@ -48,19 +48,28 @@
             };
             var dataAdapter = new $.jqx.dataAdapter(source);
 
+            var cellsrenderer = function (row, columnfield, value, defaulthtml, columnproperties) {
 
+                    return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + value.toLocaleString() + '</span>';
+
+            }
+
+            var headerrenderer = function  (value) {
+                return '<div style="margin: 10px; font-size: 30px;"><b>' + value + '</b></div>';
+            }
 
             $scope.gridSettings =
             {
                 width: "100%",
-
+                rowsheight: 55,
+                height: "400px",
+                columnsheight: 55,
                 source: dataAdapter,
                 columnsresize: true,
                 columns: [
-                    { text: 'Mata Uang', datafield: 'curname', width: '30%', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Tanggal', datafield: 'stamp_dt', width: '30%', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Beli', datafield: 'price_buy', width: '20%', cellsalign: 'right', cellsformat: 'd', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Jual', datafield: 'price_sell', width: '20%', cellsalign: 'right', cellsformat: 'd', cellclassname:"jqx-widget-content-large" }
+                    { text: 'Mata Uang', datafield: 'curname', cellsalign: 'left',width: '40%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
+                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
+                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer , renderer: headerrenderer}
                 ]
             };
             // now create the widget.

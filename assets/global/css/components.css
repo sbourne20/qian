@@ -4934,9 +4934,14 @@ Portlets
 .portlet.light2 {
   padding: 12px 20px 15px 20px;
   background-color: #fff;
-  height : 970px; /* by iwan */
+  height : 490px; /* by iwan */
 }
 
+.portlet.light3 {
+  padding: 12px 20px 15px 20px;
+  background-color: #fff;
+  height : 450px; /* by iwan */
+}
 
 .portlet.light.bordered {
   border: 1px solid #e1e1e1 !important;
