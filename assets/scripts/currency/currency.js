@@ -57,10 +57,9 @@
                 source: dataAdapter,
                 columnsresize: true,
                 columns: [
-                    { text: 'Mata Uang', datafield: 'curname', width: '30%', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Tanggal', datafield: 'stamp_dt', width: '30%', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Beli', datafield: 'price_buy', width: '20%', cellsalign: 'right', cellsformat: 'd', cellclassname:"jqx-widget-content-large" },
-                    { text: 'Jual', datafield: 'price_sell', width: '20%', cellsalign: 'right', cellsformat: 'd', cellclassname:"jqx-widget-content-large" }
+                    { text: 'Mata Uang', datafield: 'curname', width: '40%' },
+                    { text: 'Beli', datafield: 'price_buy', width: '30%', cellsalign: 'right', cellsformat: 'd'},
+                    { text: 'Jual', datafield: 'price_sell', width: '30%', cellsalign: 'right', cellsformat: 'd'}
                 ]
             };
             // now create the widget.

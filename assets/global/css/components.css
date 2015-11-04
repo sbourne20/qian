@@ -4943,6 +4943,10 @@ Portlets
   height : 450px; /* by iwan */
 }
 
+.portlet.light4 {
+  padding: 0px 0px 0px 0px;
+  background-color: #fff;
+}
 .portlet.light.bordered {
   border: 1px solid #e1e1e1 !important;
 }
