@@ -5760,6 +5760,7 @@ Responsive & Scrollable Tables
 }
 .table-scrollable.table-scrollable-borderless {
   border: 0;
+  width:50% /*by iwan*/
 }
 .table-scrollable > .table {
   width: 100% !important;
