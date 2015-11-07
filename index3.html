@@ -44,7 +44,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="index.html">
-                <img src="./assets/img/logohv.png" alt="logo" class="logo-default"/>
+                <img src="./assets/admin/layout7/img/logohv.png" alt="logo" class="logo-default"/>
             </a>
         </div>
         <!-- END LOGO -->
@@ -72,7 +72,7 @@
 
                 <div class="col-md-12">
                     <!-- BEGIN PORTLET-->
-                    <div ng-controller="currencyController"  class="portlet light ">
+                    <div class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption caption-md">
                                 <i class="icon-bar-chart theme-font hide"></i>
@@ -82,13 +82,13 @@
                             <div class="actions">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                                        {{obj.currenciesdate}}</label>
+                                        Jumat, 6 Nov 2015 12:00:00</label>
                                 </div>
                             </div>
                         </div>
                         <div align="center" class="portlet-body">
 
-                            <div class="table-scrollable table-scrollable-borderless">
+                            <div  class="table-scrollable table-scrollable-borderless">
                                 <table class="table table-hover table-light">
                                     <thead>
                                     <tr class="uppercase">
@@ -106,23 +106,87 @@
                                         </th>
                                     </tr>
                                     </thead>
-                                    <tr ng-repeat="currency in obj.currencies.data ">
+                                    <tr>
 
                                         <td>
-                                            {{currency.curname}}
+                                            <a href="javascript:;" class="primary-link">Brain</a>
                                         </td>
                                         <td>
-                                            {{currency.price_sell | number:0 }}
+                                            $345
                                         </td>
                                         <td>
-                                            {{currency.price_buy | number:0}}
+                                            45
                                         </td>
                                         <td>
-                                            <img class="user-pic" ng-src="assets/img/{{currency.indi}}">
+                                            124
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Nick</a>
+                                        </td>
+                                        <td>
+                                            $560
+                                        </td>
+                                        <td>
+                                            12
+                                        </td>
+                                        <td>
+                                            24
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Tim</a>
+                                        </td>
+                                        <td>
+                                            $1,345
+                                        </td>
+                                        <td>
+                                            450
+                                        </td>
+                                        <td>
+                                            46
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Tom</a>
+                                        </td>
+                                        <td>
+                                            $645
+                                        </td>
+                                        <td>
+                                            50
+                                        </td>
+                                        <td>
+                                            89
                                         </td>
 
                                     </tr>
 
+                                    <tr>
+
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Tom</a>
+                                        </td>
+                                        <td>
+                                            $645
+                                        </td>
+                                        <td>
+                                            50
+                                        </td>
+                                        <td>
+                                            89
+                                        </td>
+
+                                    </tr>
 
                                 </table>
                             </div>

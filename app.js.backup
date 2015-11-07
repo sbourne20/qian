@@ -1,0 +1,54 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('qianApp',['ngRoute', 'oc.lazyLoad'])
+        .config (config)
+        .constant('DREAM_FACTORY_URL', 'https://sgproject001.bit-clicks.com:443')
+        .run(run);
+
+
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider,$urlRouterProvider) {
+
+
+        $stateProvider
+
+
+
+            .state("currency",{
+                url: "/assets/scripts/currency",
+                controller: 'currencyController',
+                //templateUrl: 'currency/currency.html',
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'app',
+                            insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                            files: [
+                                '/assets/scripts/currency/currency.controller.js',
+                                '/assets/scripts/currency/currency.modal.js',
+                                '/assets/scripts/service/currency.service.js'
+
+                            ]
+                        });
+                    }]
+                }
+
+
+            });
+
+        $urlRouterProvider.otherwise('/');
+
+    }
+
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http','$state', '$stateParams'];
+    function run($rootScope, $location, $cookieStore, $http, $state, $stateParams) {
+
+
+
+
+
+    }
+})();

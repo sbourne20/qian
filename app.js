@@ -2,16 +2,26 @@
     'use strict';
 
     angular
-        .module('qianApp',[])
+        .module('qianApp', ['ngRoute', 'ngCookies','ui.router','ui.bootstrap','oc.lazyLoad'])
+        .config (config)
         .constant('DREAM_FACTORY_URL', 'https://sgproject001.bit-clicks.com:443')
         .run(run);
 
 
 
-    run.$inject = ['$http'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider,$urlRouterProvider) {
 
-    function run($http) {
+
 
     }
 
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http','$state', '$stateParams'];
+    function run($rootScope, $location, $cookieStore, $http, $state, $stateParams) {
+
+
+
+
+
+    }
 })();

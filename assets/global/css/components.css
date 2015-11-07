@@ -5760,7 +5760,7 @@ Responsive & Scrollable Tables
 }
 .table-scrollable.table-scrollable-borderless {
   border: 0;
-  width:50% /*by iwan*/
+  width:450px;
 }
 .table-scrollable > .table {
   width: 100% !important;
@@ -6056,7 +6056,7 @@ Light Table
 .table.table-light > tbody > tr > td .user-pic {
   display: inline-block;
   vertical-align: middle;
-  height: 30px;
+  height: 10px;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
