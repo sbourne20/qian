@@ -31,10 +31,11 @@
 
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
+    <link id="ng_load_plugins_before"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body ng-controller="mainController"  class="page-header-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->
 <div class="page-header navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -43,7 +44,7 @@
 
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="index.html">
+            <a href="#">
                 <img src="./assets/img/logohv.png" alt="logo" class="logo-default"/>
             </a>
         </div>
@@ -72,7 +73,7 @@
 
                 <div class="col-md-12">
                     <!-- BEGIN PORTLET-->
-                    <div ng-controller="currencyController"  class="portlet light ">
+                    <!-- <div ng-controller="currencyController"  class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption caption-md">
                                 <i class="icon-bar-chart theme-font hide"></i>
@@ -130,8 +131,10 @@
 
                         </div>
                     </div>
+                    -->
+                    <div ng-view></div>
                     <!-- END PORTLET-->
-                </div>
+                </link>
 
             </div>
 
@@ -143,11 +146,7 @@
                 <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
                     <h4 class="widget-thumb-heading">Hubungi Kami</h4>
                     <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-purple icon-bulb"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">7,644</span>
-                        </div>
+                        <a href="#contact"><img src="assets/img/contactus2.png"></a>
                     </div>
                 </div>
                 <!-- END WIDGET THUMB -->
@@ -157,11 +156,7 @@
                 <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
                     <h4 class="widget-thumb-heading">Peraturan</h4>
                     <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-green icon-layers"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">1,293</span>
-                        </div>
+                        <a href="#rules"><img src="assets/img/peraturan.png"></a>
                     </div>
                 </div>
                 <!-- END WIDGET THUMB -->
@@ -171,11 +166,7 @@
                 <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
                     <h4 class="widget-thumb-heading">@homeeahvalas</h4>
                     <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-red icon-screen-desktop"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">815</span>
-                        </div>
+                        <a href="#news"><img src="assets/img/globe.png"></a>
                     </div>
                 </div>
                 <!-- END WIDGET THjUMB -->
@@ -185,11 +176,7 @@
                 <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
                     <h4 class="widget-thumb-heading">VIDEO</h4>
                     <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-blue icon-bar-chart"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">5,071</span>
-                        </div>
+                        <a href="#video"><img src="assets/img/video.png"></a>
                     </div>
                 </div>
                 <!-- END WIDGET THUMB -->
@@ -290,11 +277,16 @@
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
 <script src="app.js"></script>
-<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+
+
+
 <script src="assets/service/currency.service.js" type="text/javascript"></script>
-<!-- END APP LEVEL ANGULARJS SCRIPTS -->
-<script src="assets/scripts/currency/currency.controller.js" type="text/javascript"></script>
-<!-- END APP LEVEL ANGULARJS SCRIPTS -->
+    <script src="assets/service/rules.service.js" type="text/javascript"></script>
+
+
+    <script src="assets/scripts/currency/currency.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/contact/contact.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/rules/rules.controller.js" type="text/javascript"></script>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 

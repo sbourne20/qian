@@ -1,0 +1,45 @@
+
+<div  class="portlet light ">
+    <div class="portlet-title">
+        <div class="caption caption-md">
+            <i class="icon-bar-chart theme-font hide"></i>
+            <span class="caption-subject theme-font bold uppercase">Peraturan Bertransaksi dengan HOMEEAH VALAS</span>
+
+        </div>
+        <div class="actions">
+        </div>
+    </div>
+    <div align="center" class="portlet-body">
+
+        <div class="scroller" style="height: 320px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+            <ul class="feeds">
+
+                <li ng-repeat="rule in obj.rules.data ">
+                    <div class="col1">
+                        <div class="cont">
+                            <div class="cont-col1">
+                                <div class="label label-sm label-danger">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                            </div>
+                            <div class="cont-col2">
+                                <div class="desc">
+                                    {{rule.notes}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="date">
+                            {{rule.tanggal}}
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+

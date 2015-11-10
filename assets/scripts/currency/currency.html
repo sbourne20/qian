@@ -1,0 +1,60 @@
+
+<div  class="portlet light ">
+    <div class="portlet-title">
+        <div class="caption caption-md">
+            <i class="icon-bar-chart theme-font hide"></i>
+            <span class="caption-subject theme-font bold uppercase">Kurs Hari Ini</span>
+
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                    {{obj.currenciesdate}}</label>
+            </div>
+        </div>
+    </div>
+    <div align="center" class="portlet-body">
+
+        <div class="table-scrollable table-scrollable-borderless">
+            <table class="table table-hover table-light">
+                <thead>
+                <tr class="uppercase">
+                    <th>
+                        MATA UANG / CURRENCY
+                    </th>
+                    <th>
+                        JUAL / SELL
+                    </th>
+                    <th>
+                        BELI / BUY
+                    </th>
+                    <th>
+                        #
+                    </th>
+                </tr>
+                </thead>
+                <tr ng-repeat="currency in obj.currencies.data ">
+
+                    <td>
+                        {{currency.curname}}
+                    </td>
+                    <td>
+                        {{currency.price_sell | number:0 }}
+                    </td>
+                    <td>
+                        {{currency.price_buy | number:0}}
+                    </td>
+                    <td>
+                        <img class="user-pic" ng-src="assets/img/{{currency.indi}}">
+                    </td>
+
+                </tr>
+
+
+            </table>
+        </div>
+
+
+    </div>
+</div>
+

@@ -1,0 +1,81 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('qianApp', ['ngRoute', 'ngCookies','ui.router','ui.bootstrap','oc.lazyLoad'])
+        .config (config)
+        .constant('DREAM_FACTORY_URL', 'https://sgproject001.bit-clicks.com:443')
+        .run(run)
+        .controller('mainController', mainController);
+
+
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider,$urlRouterProvider) {
+
+      /*  $stateProvider
+/*
+            .state("currency",{
+                url: "/currency",
+                controller: 'currencyController',
+                templateUrl: './assets/scripts/currency/currency.html',
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'app',
+                            insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                            files: [
+                                './assets/service/currency.service.js',
+                                './assets/scripts/currency/currency.controller.js',
+                                './assets/scripts/currency/currency.modal.js'
+
+
+                            ]
+                        });
+                    }]
+                }
+
+
+            })
+*/
+          /*  .state("currency",{
+                url: "/currency",
+                controller: 'currencyController',
+                templateUrl: './assets/scripts/currency/currency.html',
+                controllerAs: 'vm'
+            })
+
+            .state("home.contact",{
+                url: "./assets/scripts/contact",
+                controller: 'contactController',
+                templateUrl: '/assets/scripts/contact/contact.html',
+                controllerAs: 'vm'
+            });
+
+        $urlRouterProvider.otherwise('/currency');*/
+
+        $routeProvider
+
+            // route for the home page
+            .when('/', {
+                templateUrl : './assets/scripts/currency/currency.html',
+                controller  : 'currencyController1'
+            })
+
+    }
+
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http','$state', '$stateParams'];
+    function run($rootScope, $location, $cookieStore, $http, $state, $stateParams) {
+
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+
+
+
+
+    }
+
+    function mainController($scope){
+        $scope.message = 'this is MAIN !';
+    }
+})();
