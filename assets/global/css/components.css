@@ -3041,9 +3041,16 @@ System feeds
 }
 .feeds li .col1 {
   float: left;
-  width: 100%;
+  width: 95%;
   clear: both;
 }
+
+.feeds li .col1x {
+  float: left;
+  width: 95%;
+  clear: both;
+}
+
 .feeds li .col1 > .cont {
   float: left;
   margin-right: 75px;
@@ -3075,14 +3082,22 @@ System feeds
 }
 .feeds li .col2 {
   float: left;
-  width: 75px;
+  width: 95px;
   margin-left: -75px;
 }
+
+.feeds li .col2x {
+  float: left;
+  width: 95px;
+  margin-left: -75px;
+}
+
 .feeds li .col2 > .date {
   padding: 4px 9px 5px 4px;
   text-align: right;
   font-style: italic;
   color: #c1cbd0;
+
 }
 
 /***

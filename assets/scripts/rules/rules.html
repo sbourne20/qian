@@ -12,9 +12,9 @@
     <div align="center" class="portlet-body">
 
         <div class="scroller" style="height: 320px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-            <ul class="feeds">
+           <ul class="feeds">
 
-                <li ng-repeat="rule in obj.rules.data ">
+                <li ng-repeat="rulex in obj.rules.data.record ">
                     <div class="col1">
                         <div class="cont">
                             <div class="cont-col1">
@@ -23,20 +23,21 @@
                                 </div>
                             </div>
                             <div class="cont-col2">
-                                <div class="desc">
-                                    {{rule.notes}}
+                                <div align="left" class="desc">
+                                    {{rulex.notes}}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col2">
                         <div class="date">
-                            {{rule.tanggal}}
+                            {{rulex.tanggal}}
                         </div>
                     </div>
                 </li>
 
             </ul>
+
         </div>
 
 

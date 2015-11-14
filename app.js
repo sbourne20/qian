@@ -24,6 +24,10 @@
                 templateUrl : './assets/scripts/rules/rules.html',
                 controller  : 'rulesController'
             })
+            .when('/news', {
+                templateUrl : './assets/scripts/news/news.html',
+                controller  : 'newsController'
+            })
             .when('/contact', {
                 templateUrl : './assets/scripts/contact/contact.html',
                 controller  : 'contactController'

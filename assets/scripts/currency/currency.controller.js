@@ -22,8 +22,9 @@
 
             CurrencyService.GetListCurrency()
                 .then(function (currencies) {
-                    $scope.obj.currencies = currencies;
-                    $scope.obj.currenciesdate = currencies.data[0].stamp_dt;
+
+                        $scope.obj.currencies = currencies;
+                        //$scope.obj.currenciesdate = currencies.data[0].stamp_dt;
 
 
 

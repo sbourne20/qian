@@ -19,6 +19,7 @@
             rulesService.GetTable()
                 .then(function (rules) {
                     $scope.obj.rules = rules;
+
                 });
         }
 
