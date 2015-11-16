@@ -5775,7 +5775,7 @@ Responsive & Scrollable Tables
 }
 .table-scrollable.table-scrollable-borderless {
   border: 0;
-  width:450px;
+  width:270px;
 }
 .table-scrollable > .table {
   width: 100% !important;
