@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
-Version: 4.1.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js" > <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js" > <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en" class="no-js" ng-app="qianApp">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
@@ -46,10 +31,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
+    <link id="ng_load_plugins_before"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body ng-controller="mainController"  class="page-header-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->
 <div class="page-header navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -58,8 +44,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="index.html">
-                <img src="./assets/admin/layout7/img/logohv.png" alt="logo" class="logo-default"/>
+            <a href="#">
+                <img src="./assets/img/logohv.png" alt="logo" class="logo-default"/>
             </a>
         </div>
         <!-- END LOGO -->
@@ -85,161 +71,155 @@ License: You must have a valid license purchased only from themeforest(the above
 
             <div class="row margin-top-10">
 
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12">
                     <!-- BEGIN PORTLET-->
-                    <div class="portlet light ">
+                    <!-- <div ng-controller="currencyController"  class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption caption-md">
                                 <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase">Kurs Hari Ini</span>
 
                             </div>
-                        </div>
-                        <div ng-controller = "currencyController"  class="portlet-body">
-                            <jqx-grid jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>
-                        </div>
-                    </div>
-                    <!-- END PORTLET-->
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <!-- BEGIN PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption caption-md">
-                                <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase">Pergerakan Mata Uang</span>
-
-                            </div>
                             <div class="actions">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                                        <input type="radio" name="options" class="toggle" id="option1">Hari Ini</label>
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                        <input type="radio" name="options" class="toggle" id="option2">1 Minggu</label>
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                        <input type="radio" name="options" class="toggle" id="option2">1 Bulan</label>
-
+                                        {{obj.currenciesdate}}</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet-body">
-                            <div id='chartContainer' style="width:100%; height:403px"></div>
+                        <div align="center" class="portlet-body">
+
+                            <div class="table-scrollable table-scrollable-borderless">
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th>
+                                            MATA UANG / CURRENCY
+                                        </th>
+                                        <th>
+                                            JUAL / SELL
+                                        </th>
+                                        <th>
+                                            BELI / BUY
+                                        </th>
+                                        <th>
+                                            #
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tr ng-repeat="currency in obj.currencies.data ">
+
+                                        <td>
+                                            {{currency.curname}}
+                                        </td>
+                                        <td>
+                                            {{currency.price_sell | number:0 }}
+                                        </td>
+                                        <td>
+                                            {{currency.price_buy | number:0}}
+                                        </td>
+                                        <td>
+                                            <img class="user-pic" ng-src="assets/img/{{currency.indi}}">
+                                        </td>
+
+                                    </tr>
+
+
+                                </table>
+                            </div>
 
 
                         </div>
                     </div>
+                    -->
+                    <div ng-view></div>
                     <!-- END PORTLET-->
-                </div>
+                </link>
+
             </div>
 
         </div>
 
-
-
-        <div class="row">
-            <div class="col-md-6 margin-bottom-30">
-                <!-- BEGIN WIDGET TAB -->
-                <div class="widget-bg-color-white widget-tab rounded-3">
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#tab_1_1" data-toggle="tab"> Lokal </a>
-                        </li>
-                        <li>
-                            <a href="#tab_1_2" data-toggle="tab"> International </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content scroller" style="height: 350px;" data-always-visible="1" data-handle-color="#D7DCE2">
-                        <div class="tab-pane fade active in" id="tab_1_1">
-                            <div id="rsslokal" class="widget-news margin-bottom-20">
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade " id="tab_1_2">
-                            <div id="rssinternational" class="widget-news margin-bottom-20">
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- END WIDGET TAB -->
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <!-- BEGIN PORTLET-->
-                <div class="portlet light4 tasks-widget widget-comments rounded-3">
-
-                        <a class="twitter-timeline" href="https://twitter.com/homeeahvalas" data-widget-id="661841369829236737">Tweets by @homeeahvalas</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-                </div>
-                <!-- END PORTLET-->
-            </div>
-
-        </div>
-
-
-
-        <div class="row">
-            <div class="row widget-bg-color-white no-space margin-bottom-30">
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe widget-subscribe-quote widget-bg-color-purple">
-                        <h2 class="widget-subscribe-title widget-title-color-purple-dark text-uppercase">Prosedur Transaksi Homeeah Valas</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-purple-light">5 Prosedur yang memudahkan anda untuk bertransaksi dengan kami</p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe">
-                        <span class="widget-subscribe-no">1</span>
-                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Check <br> Rate</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Pastikan Anda men-cek Rate yang akan dibeli / dijual. Rate Jual adalah Rate kami menjual kepada Anda, sedangkan Rate Beli adalah Rate kami membeli dari Anda.</p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe widget-subscribe-border">
-                        <span class="widget-subscribe-no">2</span>
-                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Konfirmasi <br/> Transaksi</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Konfirmasikan Rate Jual/Beli Anda kepada Treasury Dealer kami. Anda akan mendapatkan Bukti konfirmasi yang ditanda-tangani oleh Anda terhadap transaksi yang akan dilakukan.</p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe widget-subscribe-border-top">
-                        <span class="widget-subscribe-no">3</span>
-                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Siapkan Data &<br/>Isi Form</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Siapkan data-data yang diperlukan seperti : <b><u>KTP</u> & <u>DOKUMEN UNDERLYING</u></b>. Untuk Dokumen Underlying dibutuhkan apabila transaksi melebihi USD10.000 Per bulan. Kemudian Isi Form yang diperlukan untuk persetujuan transaksi.</p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe widget-subscribe-border-top">
-                        <span class="widget-subscribe-no">4</span>
-                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Lakukan<br/> Transaksi</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-dark-light">Lakukan Pembayaran (Untuk Beli) atau Penyerahan Uang Asing (Untuk Jual) terlebih dahulu, sebelum kami dapat memproses transaksi.</p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-                <div class="col-md-3 col-sm-6 no-space">
-                    <!-- BEGIN WIDGET SUBSCRIBE -->
-                    <div class="widget-subscribe widget-subscribe-border-top">
-                        <span class="widget-subscribe-no">5</span>
-                        <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">Selesai<br/> Transaksi!</h2>
-                        <p class="widget-subscribe-subtitle widget-title-color-dark-light"><u><b>PASTIKAN</b></u> Anda men-cek Uang yang diterima sebelum meninggalkan meja counter kami, <u><b>SEMUA KELUHAN</b></u> yang terjadi setelah <u><B>MENINGGALKAN</B></u> meja counter, tidak akan <b><u>DILAYANI.</u></b></p>
-                    </div>
-                    <!-- END WIDGET SUBSCRIBE -->
-                </div>
-            </div>
-
-        </div>
         <!-- END WIDGETS -->
     </div>
+
+        <div align="center" class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            HUBUNGI
+                        </div>
+                        <div class="desc">
+                            Kami
+                        </div>
+                    </div>
+                    <a class="more" href="#contact">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            PERATURAN
+                        </div>
+                        <div class="desc">
+                            Bertransaksi
+                        </div>
+                    </div>
+                    <a class="more" href="#rules">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            BERITA
+                        </div>
+                        <div class="desc">
+                            @homeeahvalas
+                        </div>
+                    </div>
+                    <a class="more" href="#news">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-caret-square-o-right"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            VIDEO
+                        </div>
+                        <div class="desc">
+                            Seputar Keuangan
+                        </div>
+                    </div>
+                    <a class="more" href="#">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
     <!-- END CONTENT -->
 
 
@@ -247,6 +227,9 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
+    <div id="tweetnews" class="page-footer">
+        <script type="text/javascript">(function(){var ticker=document.createElement('script');ticker.type='text/javascript';ticker.async=true;ticker.src='//twitcker.com/ticker/homeeahvalas.js?background=f1f3fa&tweet=f1f3fa&container=own-container&own-container=tweetnews';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ticker);})();</script>
+        </div>
 <div class="page-footer">
     <div class="page-footer-inner container-fluid container-lf-space">
         <p class="page-footer-copyright"><b>2015 (c) PT. HOMEEAH VALAS INTI</b><br>Wisma BSG Lt. 3A - Jl. Abdul Muis No. 40. Jakarta Pusat 10160<br>
@@ -258,6 +241,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <i class="icon-arrow-up"></i>
     </div>
 </div>
+    <a class="btn default" data-toggle="modal" href="#undercons">
+        View Demo test </a>
+
 <!-- END FOOTER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
@@ -266,8 +252,19 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="./assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
 
-<!-- angular -->
-<script type="text/javascript" src="./assets/global/plugins/angularjs/angular.min.js"></script>
+
+<!-- BEGIN CORE ANGULARJS PLUGINS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular-cookies.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular-sanitize.min.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular-touch.min.js"></script>
+<script src="assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+<script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
+<!-- END CORE ANGULARJS PLUGINS -->
+
 <!-- end of angular -->
 <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -281,31 +278,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="./assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
-
-<!-- jqwidget -->
-<script src="./assets/global/plugins/jqwidgets/jqxcore.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/jqwidgets/jqxangular.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="./assets/global/plugins/jqwidgets/styles/jqx.base.css" type="text/css" />
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcore.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdatetimeinput.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcalendar.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxtooltip.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/globalization/globalize.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxbuttons.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxscrollbar.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxmenu.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.selection.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.columnsresize.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdata.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxcheckbox.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxscrollbar.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxgrid.sort.js"></script>
-
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxdraw.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/jqwidgets/jqxchart.core.js"></script>
-<!-- end jqwidget -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="./assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
@@ -338,62 +310,24 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="./assets/admin/layout2/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="./assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
 <script src="./assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
 
-<!-- RSS PAGE -->
-<script src="./assets/global/plugins/zrssfeed/jquery.zrssfeed.min.js" type="text/javascript"></script>
-<!-- end of RSS PAGE -->
-<script>
-    // jQuery(document).ready(function() {
-    //Metronic.init(); // init metronic core componets
-    //Layout.init(); // init layout
-    //QuickSidebar.init(); // init quick sidebar
-    //Index.init(); // init index page
-    //Widgets.init(); // init widgets
-    //currencyWindow.init();
-    // });
-
-
-</script>
+<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
 <script src="app.js"></script>
-<script src="./assets/scripts/currency/currency.js"></script>
-<script src="./assets/scripts/chmovement/chmovement.js"></script>
-<!--Start of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/5631df6d085f88f3037d93e0/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-<script>
-    jQuery(document).ready(function() {
-        Metronic.init(); // init metronic core componets
-        Layout.init(); // init layout
-        QuickSidebar.init(); // init quick sidebar
-        //Index.init(); // init index page
-        //Widgets.init(); // init widgets
-        chmovementWindow.init();
 
-        $('#rsslokal').rssfeed('http://news.google.com/news?cf=all&hl=id&ned=id_id&output=rss', {
-            limit: 10
-        });
 
-        $('#rssinternational').rssfeed('https://www.google.com/alerts/feeds/09086280885562043199/12069431810923978215', {
-            limit: 10
-        });
-    });
-</script>
+
+<script src="assets/service/currency.service.js" type="text/javascript"></script>
+    <script src="assets/service/rules.service.js" type="text/javascript"></script>
+
+
+    <script src="assets/scripts/currency/currency.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/contact/contact.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/rules/rules.controller.js" type="text/javascript"></script>
+    <script src="assets/scripts/news/news.controller.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
 
 <!-- END JAVASCRIPTS -->
 </body>
-
 <!-- END BODY -->
 </html>

@@ -24,6 +24,9 @@
                 templateUrl : './assets/scripts/rules/rules.html',
                 controller  : 'rulesController'
             })
+            .when('/undercons', {
+                templateUrl : './assets/scripts/undercons/undercons.html'
+            })
             .when('/news', {
                 templateUrl : './assets/scripts/news/news.html',
                 controller  : 'newsController'
