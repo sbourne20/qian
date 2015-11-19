@@ -1,67 +1,62 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
+Version: 4.1.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en" class="no-js" ng-app="qianApp">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8"/>
-    <title>Homeeah Valas</title>
+    <meta charset="utf-8">
+    <title>Metronic | Metronic | Admin Dashboard Template</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-    <link href="./assets/global/plugins/mapplic/mapplic/mapplic.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
     <link href="./assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
-    <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/admin/layout7/css/layout.css" rel="stylesheet" type="text/css"/>
-    <link href="./assets/admin/layout7/css/custom.css" rel="stylesheet" type="text/css"/>
-
-
+    <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+    <link href="./assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="./assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="./assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="./assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
     <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body ng-controller="mainController"  class="page-header-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->
-<div class="page-header navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <div class="clearfix">
 
 
-        <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="index.html">
-                <img src="./assets/admin/layout7/img/logohv.png" alt="logo" class="logo-default"/>
-            </a>
-        </div>
-        <!-- END LOGO -->
 
-        <!-- BEGIN TOP NAVIGATION MENU -->
-
-        <!-- END TOP NAVIGATION MENU -->
-    </div>
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
-
-<!-- BEGIN CLEARFIX -->
 <div class="clearfix"></div>
-<!-- END CLEARFIX -->
-
-<!-- BEGIN CONTAINER -->
 <div class="page-container page-container-bg-solid">
     <!-- BEGIN CONTENT -->
     <div class="container-fluid container-lf-space page-content">
@@ -72,228 +67,176 @@
 
                 <div class="col-md-12">
                     <!-- BEGIN PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption caption-md">
-                                <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase">Kurs Hari Ini</span>
-
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                                        Jumat, 6 Nov 2015 12:00:00</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div align="center" class="portlet-body">
-
-                            <div  class="table-scrollable table-scrollable-borderless">
-                                <table class="table table-hover table-light">
-                                    <thead>
-                                    <tr class="uppercase">
-                                        <th>
-                                            MATA UANG / CURRENCY
-                                        </th>
-                                        <th>
-                                            JUAL / SELL
-                                        </th>
-                                        <th>
-                                            BELI / BUY
-                                        </th>
-                                        <th>
-                                            #
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tr>
-
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Brain</a>
-                                        </td>
-                                        <td>
-                                            $345
-                                        </td>
-                                        <td>
-                                            45
-                                        </td>
-                                        <td>
-                                            124
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Nick</a>
-                                        </td>
-                                        <td>
-                                            $560
-                                        </td>
-                                        <td>
-                                            12
-                                        </td>
-                                        <td>
-                                            24
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Tim</a>
-                                        </td>
-                                        <td>
-                                            $1,345
-                                        </td>
-                                        <td>
-                                            450
-                                        </td>
-                                        <td>
-                                            46
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Tom</a>
-                                        </td>
-                                        <td>
-                                            $645
-                                        </td>
-                                        <td>
-                                            50
-                                        </td>
-                                        <td>
-                                            89
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Tom</a>
-                                        </td>
-                                        <td>
-                                            $645
-                                        </td>
-                                        <td>
-                                            50
-                                        </td>
-                                        <td>
-                                            89
-                                        </td>
-
-                                    </tr>
-
-                                </table>
-                            </div>
-
-
-                        </div>
-                    </div>
+                    <div ng-view></div>
                     <!-- END PORTLET-->
+
+
                 </div>
 
             </div>
 
+            <!-- END WIDGETS -->
         </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <!-- BEGIN WIDGET THUMB -->
-                <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
-                    <h4 class="widget-thumb-heading">Hubungi Kami</h4>
-                    <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-purple icon-bulb"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">7,644</span>
+        <div align="center" class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            HUBUNGI
+                        </div>
+                        <div class="desc">
+                            Kami
                         </div>
                     </div>
+                    <a class="more" href="#contact">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
                 </div>
-                <!-- END WIDGET THUMB -->
             </div>
-            <div class="col-md-3">
-                <!-- BEGIN WIDGET THUMB -->
-                <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
-                    <h4 class="widget-thumb-heading">Peraturan</h4>
-                    <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-green icon-layers"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">1,293</span>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            PERATURAN
+                        </div>
+                        <div class="desc">
+                            Bertransaksi
                         </div>
                     </div>
+                    <a class="more" href="#rules">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
                 </div>
-                <!-- END WIDGET THUMB -->
             </div>
-            <div class="col-md-3">
-                <!-- BEGIN WIDGET THUMB -->
-                <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
-                    <h4 class="widget-thumb-heading">@homeeahvalas</h4>
-                    <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-red icon-screen-desktop"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">815</span>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            BERITA
+                        </div>
+                        <div class="desc">
+                            @homeeahvalas
                         </div>
                     </div>
+                    <a class="more" href="#news">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
                 </div>
-                <!-- END WIDGET THjUMB -->
             </div>
-            <div class="col-md-3">
-                <!-- BEGIN WIDGET THUMB -->
-                <div class="widget-thumb widget-bg-color-white text-uppercase rounded-3 margin-bottom-30">
-                    <h4 class="widget-thumb-heading">VIDEO</h4>
-                    <div class="widget-thumb-wrap">
-                        <i class="widget-thumb-icon widget-bg-color-blue icon-bar-chart"></i>
-                        <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="counter widget-thumb-body-stat">5,071</span>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-caret-square-o-right"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            VIDEO
+                        </div>
+                        <div class="desc">
+                            Seputar Keuangan
                         </div>
                     </div>
+                    <a class="more" href="#">
+                        Lihat Lebih Lanjut <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
                 </div>
-                <!-- END WIDGET THUMB -->
             </div>
+
+
         </div>
+        <!-- END CONTENT -->
 
 
 
-
-
-
-        <!-- END WIDGETS -->
     </div>
-    <!-- END CONTENT -->
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div id="tweetnews" class="page-footer">
+        <script type="text/javascript">(function(){var ticker=document.createElement('script');ticker.type='text/javascript';ticker.async=true;ticker.src='//twitcker.com/ticker/homeeahvalas.js?background=f1f3fa&tweet=f1f3fa&container=own-container&own-container=tweetnews';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ticker);})();</script>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner container-fluid container-lf-space">
+            <p class="page-footer-copyright"><b>2015 (c) PT. HOMEEAH VALAS INTI</b><br>Wisma BSG Lt. 3A - Jl. Abdul Muis No. 40. Jakarta Pusat 10160<br>
+                Phone: 021-3614267    Fax: 021-3614266
+
+            </p>
+        </div>
+        <div class="go2top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+
+    <div data-backdrop="static" data-keyboard="false" class="modal fade bs-modal-lg" id="large2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Selamat Datang di Official Website Homeeah Valas</h4>
+                </div>
+                <div class="modal-body">
+                    Salam Kenal, <br>
+                    Homeeah Valas adalah perusahaan Penukarang Uang Asing (Valas) yang berdomisili secara resmi di Jakarta Pusat. Dalam
+                    rangka meningkatkan pelayanan dengan kualitas Prima, dan serta mendekatkan kami dengan nasabah, dan juga memberikan
+                    Harga yang sangat Kompetitif, Kami mempersiapkannya dengan sangat seksama, Mulai dari kesiapan Operasional, System,
+                    hingga Pengawasan, karena hal ini menjadi bagian yang penting bagi Ekosistem Homeeah Valas. <br><br>
+
+                    Yang menjadi Perbedaan Homeeah Valas dengan kompetitor adalah, dimulai pada saat kami mendirikan Perusahaan ini, Kami
+                    memfokuskan diri kepada Nasabah, oleh karena itu, Kami mencoba untuk menghadirkan produk dan layanan yang
+                    terbaik. Kami mempersiapkannya secara matang, Kami mengambil waktu yang cukup untuk menyusun mekanisme yang Baik,
+                    Kami melakukan riset secara berkala untuk mendapatkan hasil yang maksimal, dan akhirnya produk yang baik ini akan kami
+                    berikan ke Nasabah. <br><br>
+
+                    Demi untuk memastikan Kualitas Pelayanan yang Demikian, Kami mengambil banyak waktu untuk mempersiapkan diri. Dengan Senang
+                    hati kami informasikan bahwa saat ini, kami sudah dalam <b>fase terakhir</b> dari kesiapan Operasional Kami. <b>Dalam waktu
+                    yang sangat dekat, Homeeah Valas akan beroperasi</b>, dan kami sangat berharap, pengalaman Anda bertransaksi dengan kami
+                    akan sangat menyenangkan, seperti kami senang melayani Anda.
+                    <br><br>
+
+                    Akhir Kata, Kami dari Head Office Homeeah Valas, mengucapkan Salam Kenal bagi Calon Nasabah Homeeah Valas, semoga layanan kami
+                    berkenan bagi Anda.
+                    <br><br>
+                    Sincerely Yours,<br>
+                    Management Homeeah Valas.
+
+
+
+
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
 
 
 
 </div>
-<!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer">
-    <div class="page-footer-inner container-fluid container-lf-space">
-        <p class="page-footer-copyright"><b>2015 (c) PT. HOMEEAH VALAS INTI</b><br>Wisma BSG Lt. 3A - Jl. Abdul Muis No. 40. Jakarta Pusat 10160<br>
-            Phone: 021-3614267    Fax: 021-3614266
 
-        </p>
-    </div>
-    <div class="go2top">
-        <i class="icon-arrow-up"></i>
-    </div>
+<div class="scroll-to-top">
+    <i class="icon-arrow-up"></i>
 </div>
 <!-- END FOOTER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
+<!-- BEGIN CORE ANGULARJS PLUGINS -->
 <script src="./assets/global/plugins/respond.min.js"></script>
 <script src="./assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
-
-
 <!-- BEGIN CORE ANGULARJS PLUGINS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="https://code.angularjs.org/1.2.27/angular.min.js"></script>
@@ -303,10 +246,9 @@
 <script src="https://code.angularjs.org/1.2.27/angular-touch.min.js"></script>
 <script src="assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
 <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-<script src="assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
-<!-- END CORE ANGULARJS PLUGINS -->
+<script src="assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script><!-- END CORE ANGULARJS PLUGINS -->
 
-<!-- end of angular -->
+
 <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -317,51 +259,55 @@
 <script src="./assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
-
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="./assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/mapplic/js/hammer.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/mapplic/js/jquery.easing.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/mapplic/js/jquery.mousewheel.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/mapplic/mapplic/mapplic.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript" ></script>
-<script src="./assets/global/plugins/amcharts/ammap/maps/js/continentsLow.js" type="text/javascript"></script>
-<script src="http://www.amcharts.com/lib/3/themes/none.js"></script>
-<script src="./assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
+<script src="./assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="./assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
 <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
 <script src="./assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="./assets/admin/layout7/scripts/layout.js" type="text/javascript"></script>
-<script src="./assets/admin/layout7/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="./assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
-<script src="./assets/admin/pages/scripts/widgets.js" type="text/javascript"></script>
-
-
-
 <script src="./assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
 <script src="./assets/admin/layout2/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="./assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
 <script src="./assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
+<script src="./assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 
-<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
-<script src="app.js"></script>
-<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+
+<script src="app2.js"></script>
+
+
+
 <script src="assets/service/currency.service.js" type="text/javascript"></script>
-<!-- END APP LEVEL ANGULARJS SCRIPTS -->
+<script src="assets/service/rules.service.js" type="text/javascript"></script>
+
+
 <script src="assets/scripts/currency/currency.controller.js" type="text/javascript"></script>
-<!-- END APP LEVEL ANGULARJS SCRIPTS -->
+<script src="assets/scripts/contact/contact.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/rules/rules.controller.js" type="text/javascript"></script>
+<script src="assets/scripts/news/news.controller.js" type="text/javascript"></script>
 
-<!-- END PAGE LEVEL SCRIPTS -->
 
+
+
+<script>
+    jQuery(document).ready(function() {
+       // Metronic.init(); // init metronic core componets
+        // Layout.init(); // init layout
+        // Demo.init(); // init demo(theme settings page)
+        // QuickSidebar.init(); // init quick sidebar
+        // Index.init(); // init index page
+        // Tasks.initDashboardWidget(); // init tash dashboard widget
+    });
+</script>
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
