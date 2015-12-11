@@ -5,10 +5,10 @@
         .module('qianApp',["jqwidgets"])
         .controller('currencyDashController', currencyDashController);
 
-    currencyDashController.$inject = ['$http', '$scope'];
+    currencyDashController.$inject = ['$http', '$scope', '$interval'];
 
 
-    function currencyDashController($http, $scope) {
+    function currencyDashController($http, $scope, $interval) {
         var vm = this;
         $scope.createWidget = false;
         $http({
@@ -68,8 +68,9 @@
                 columnsresize: true,
                 columns: [
                     { text: 'Mata Uang', datafield: 'curname', cellsalign: 'left',width: '40%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
-                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
-                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer , renderer: headerrenderer}
+                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer , renderer: headerrenderer},
+                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%', cellsrenderer: cellsrenderer, renderer: headerrenderer}
+
                 ]
             };
             // now create the widget.
@@ -77,6 +78,8 @@
         }).error(function (data, status) {
             // Some error occurred
         });
+
+
     }
 
 
