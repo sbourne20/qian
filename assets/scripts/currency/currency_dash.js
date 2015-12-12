@@ -11,28 +11,43 @@
     function currencyDashController($http, $scope, $interval) {
         var vm = this;
         $scope.createWidget = false;
-        $http({
-            method: 'get',
-            url: 'https://sgproject001.bit-clicks.com:443/rest/qian/_proc/retrieve_rates',
+
+
+        var url = 'https://sgproject001.bit-clicks.com:443/rest/qian/_proc/fetchRates';
+        var data = {
+            "params": [
+                {
+                    "name": "nid",
+                    "param_type": "IN",
+                    "value": "db"
+                },
+                {
+                    "name": "curid",
+                    "param_type": "IN",
+                    "value": 0
+                }
+            ],
+            "schema": {
+                "STATUS": "varchar",
+                "ERROR_CODE": "varchar",
+                "MESSAGE": "varchar"
+            },
+            "wrapper": "record"
+        };
+
+
+
+
+        return $http({
+            method: "POST",
+            url: url,
             headers: {
                 'X-DreamFactory-Application-Name': "myapp"
             },
-            data: {
-                "params": [
-                    {
-                        "name": "stats",
-                        "param_type": "IN",
-                        "value": "'ACTIVE'"
-                    }
-                ],
-                    "schema": {
-                    "STATUS": "varchar",
-                        "ERROR_CODE": "varchar",
-                        "MESSAGE": "varchar"
-                },
-                "wrapper": "record"
-            }
-        }).success(function (data, status) {
+            data: data
+
+
+        }).success(function(data, stats){
             // prepare the data
             var source =
             {
@@ -50,7 +65,7 @@
 
             var cellsrenderer = function (row, columnfield, value, defaulthtml, columnproperties) {
 
-                    return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + value.toLocaleString() + '</span>';
+                return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + value.toLocaleString() + '</span>';
 
             }
 
@@ -62,7 +77,7 @@
             {
                 width: "100%",
                 rowsheight: 55,
-                height: "400px",
+                height: "480px",
                 columnsheight: 55,
                 source: dataAdapter,
                 columnsresize: true,
@@ -75,9 +90,8 @@
             };
             // now create the widget.
             $scope.createWidget = true;
-        }).error(function (data, status) {
-            // Some error occurred
         });
+
 
 
     }

@@ -9,7 +9,7 @@
         <div class="actions">
             <div class="btn-group btn-group-devided" data-toggle="buttons">
                 <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                    {{obj.currencies.data[0].stamp_dt}}</label>
+                    {{obj.currencies[0].stamp_dt}}</label>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                     </th>
                 </tr>
                 </thead>
-                <tr ng-repeat="currency in obj.currencies.data ">
+                <tr ng-repeat="currency in obj.currencies ">
 
                     <td>
                         {{currency.curname}}
@@ -45,7 +45,7 @@
                         {{currency.price_buy | number:0}}
                     </td>
                     <td>
-                        <img class="user-pic" ng-src="assets/img/{{currency.indi}}">
+                        <img class="user-pic" ng-src="./assets/img/{{currency.indi}}">
                     </td>
 
                 </tr>
