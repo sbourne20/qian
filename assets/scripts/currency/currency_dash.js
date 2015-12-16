@@ -55,17 +55,26 @@
                 datafields: [
                     { name: 'curname', type: 'string' },
                     { name: 'stamp_dt', type: 'string' },
-                    { name: 'price_buy', type: 'int' },
-                    { name: 'price_sell', type: 'int' },
+                    { name: 'price_buy' },
+                    { name: 'price_sell'},
                 ],
                 id: 'id',
                 localdata: data
             };
             var dataAdapter = new $.jqx.dataAdapter(source);
+            Number.prototype.toCurrencyString=function(){
+                return this.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g,'$1 ');
+            }
 
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
             var cellsrenderer = function (row, columnfield, value, defaulthtml, columnproperties) {
-
-                return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + value.toLocaleString() + '</span>';
+                if (columnfield=='Mata Uang') {
+                    return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + value + '</span>';
+                } else {
+                    return '<span style="margin: 10px; float: ' + columnproperties.cellsalign + '; font-size: 28px;">' + numberWithCommas(value) + '</span>';
+                }
 
             }
 
@@ -83,8 +92,8 @@
                 columnsresize: true,
                 columns: [
                     { text: 'Mata Uang', datafield: 'curname', cellsalign: 'left',width: '40%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
-                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%', cellsformat: 'd', cellsrenderer: cellsrenderer , renderer: headerrenderer},
-                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%', cellsformat: 'd', cellsrenderer: cellsrenderer, renderer: headerrenderer}
+                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%',  cellsrenderer: cellsrenderer,  renderer: headerrenderer},
+                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%',  cellsrenderer: cellsrenderer, renderer: headerrenderer}
 
                 ]
             };
