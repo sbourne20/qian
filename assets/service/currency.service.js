@@ -53,30 +53,6 @@
             }).then(handleSuccess, handleError('Error updating data'));
 
 
-            /*return  $http({
-                method: 'Get',
-                url: DREAM_FACTORY_URL + '/rest/qian/_proc/retrieve_rates',
-                headers: {
-                    'X-DreamFactory-Application-Name': "myapp"
-                },
-                data: {
-                    "params": [
-                        {
-                            "name": "stats",
-                            "param_type": "IN",
-                            "value": "'ACTIVE'"
-                        }
-                    ],
-                    "schema": {
-                        "STATUS": "varchar",
-                        "ERROR_CODE": "varchar",
-                        "MESSAGE": "varchar"
-                    },
-                    "wrapper": "record"
-                }
-
-
-            }).then(handleSuccess, handleError('Error getting currency'));*/
 
 
         }
