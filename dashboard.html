@@ -49,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body class="page-header-fixed page-quick-sidebar-over-content" ng-controller = "currencyDashController"  >
 <!-- BEGIN HEADER -->
 <div class="page-header navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -90,15 +90,17 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN PORTLET-->
                     <div class="portlet light2 ">
                         <div class="portlet-title">
-                            <div class="caption caption-md">
+                            <div class="caption caption-md" style="width:100%;">
                                 <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase"><span style="font-size: 30px;">Kurs Hari Ini</span></span>
+                                <span style="float:right" class="caption-subject theme-font bold uppercase"><span style="font-size: 30px;" >{{datetime | date:'dd-MMM-yyyy HH:mm:ss'}}</span></span>
 
                             </div>
                         </div>
-                        <div  ng-controller = "currencyDashController"  class="portlet-body">
-                            <jqx-grid style="font-size: 30px;" jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>
-                        </div>
+
+                            <!--<jqx-grid id="jqxGrid" style="font-size: 30px;" jqx-create="createWidget" jqx-settings="gridSettings"></jqx-grid>-->
+                            <div id="jqxgrid" style="font-size: 30px; font-family: Verdana; "></div>
+
                     </div>
                     <!-- END PORTLET-->
 
@@ -366,7 +368,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="./assets/scripts/currency/currency_dash.js"></script>
 
 <script>
-    jQuery(document).ready(function() {
+    $( document ).ready(function() {
+
 
     });
 </script>

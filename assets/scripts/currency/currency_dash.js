@@ -11,7 +11,7 @@
     function currencyDashController($http, $scope, $interval) {
         var vm = this;
         $scope.createWidget = false;
-
+        $scope.datetime = "";
 
         var url = 'https://sgproject001.bit-clicks.com:443/rest/qian/_proc/fetchRates';
         var data = {
@@ -37,7 +37,6 @@
 
 
 
-
         return $http({
             method: "POST",
             url: url,
@@ -49,18 +48,22 @@
 
         }).success(function(data, stats){
             // prepare the data
+
             var source =
             {
                 datatype: "jsonp",
                 datafields: [
                     { name: 'curname', type: 'string' },
-                    { name: 'stamp_dt', type: 'string' },
+                    { name: 'stamp_dt', type: 'date', format:"dd-MM-yyyy" },
                     { name: 'price_buy' },
                     { name: 'price_sell'},
                 ],
                 id: 'id',
                 localdata: data
             };
+
+            $scope.datetime = new Date(data.record[0].stamp_dt);
+
             var dataAdapter = new $.jqx.dataAdapter(source);
             Number.prototype.toCurrencyString=function(){
                 return this.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g,'$1 ');
@@ -82,7 +85,8 @@
                 return '<div style="margin: 10px; font-size: 30px;"><b>' + value + '</b></div>';
             }
 
-            $scope.gridSettings =
+            //$scope.gridSettings =
+            $("#jqxgrid").jqxGrid(
             {
                 width: "100%",
                 rowsheight: 55,
@@ -96,11 +100,13 @@
                     { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%',  cellsrenderer: cellsrenderer, renderer: headerrenderer}
 
                 ]
-            };
-            // now create the widget.
-            $scope.createWidget = true;
-        });
+            });
 
+
+
+
+
+        });
 
 
     }
