@@ -90,7 +90,7 @@
             {
                 width: "100%",
                 rowsheight: 55,
-                height: "480px",
+                height: "980px",
                 columnsheight: 55,
                 source: dataAdapter,
                 columnsresize: true,
