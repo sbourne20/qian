@@ -40,8 +40,8 @@
                 datafields: [
                     { name: 'curname', type: 'string' },
                     { name: 'stamp_dt', type: 'string' },
-                    { name: 'price_buy', type: 'int' },
-                    { name: 'price_sell', type: 'int' },
+                    { name: 'price_buy', type: 'float' },
+                    { name: 'price_sell', type: 'float' },
                 ],
                 id: 'id',
                 localdata: data
@@ -57,8 +57,8 @@
                 columnsresize: true,
                 columns: [
                     { text: 'Mata Uang', datafield: 'curname', width: '40%' },
-                    { text: 'Beli', datafield: 'price_buy', width: '30%', cellsalign: 'right', cellsformat: 'd'},
-                    { text: 'Jual', datafield: 'price_sell', width: '30%', cellsalign: 'right', cellsformat: 'd'}
+                    { text: 'Beli', datafield: 'price_buy', width: '30%', cellsalign: 'right', cellsformat: 'f'},
+                    { text: 'Jual', datafield: 'price_sell', width: '30%', cellsalign: 'right', cellsformat: 'f'}
                 ]
             };
             // now create the widget.
