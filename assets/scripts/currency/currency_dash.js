@@ -55,8 +55,8 @@
                 datafields: [
                     { name: 'curname', type: 'string' },
                     { name: 'stamp_dt', type: 'date', format:"dd-MM-yyyy" },
-                    { name: 'price_buy' },
-                    { name: 'price_sell'},
+                    { name: 'price_buy', type: 'float' },
+                    { name: 'price_sell', type: 'float'},
                 ],
                 id: 'id',
                 localdata: data
@@ -96,8 +96,8 @@
                 columnsresize: true,
                 columns: [
                     { text: 'Mata Uang', datafield: 'curname', cellsalign: 'left',width: '40%', cellsrenderer: cellsrenderer, renderer: headerrenderer},
-                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%',  cellsrenderer: cellsrenderer,  renderer: headerrenderer},
-                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%',  cellsrenderer: cellsrenderer, renderer: headerrenderer}
+                    { text: 'Jual', datafield: 'price_sell', cellsalign: 'right', width: '30%', cellsformat: 'f2', cellsrenderer: cellsrenderer, renderer: headerrenderer },
+                    { text: 'Beli', datafield: 'price_buy', cellsalign: 'right', width: '30%', cellsformat: 'f2', cellsrenderer: cellsrenderer, renderer: headerrenderer }
 
                 ]
             });
