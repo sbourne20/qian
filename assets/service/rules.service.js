@@ -8,7 +8,7 @@
     rulesService.$inject = ['$http','DREAM_FACTORY_URL'];
     function rulesService($http, DREAM_FACTORY_URL) {
         var service = {};
-        $http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'qianApp'; //default header for X-DreamFactory-Application-Name
+        //$http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'qianApp'; //default header for X-DreamFactory-Application-Name
 
         service.GetTable = GetTable;
         return service;
@@ -18,9 +18,9 @@
 
             return  $http({
                 method: 'Get',
-                url: DREAM_FACTORY_URL + '/rest/qian/rules?order=tanggal',
+                url: DREAM_FACTORY_URL + '/_table/rules?order=tanggal',
                 headers: {
-                    'X-DreamFactory-Application-Name': "myapp"
+                    'X-DreamFactory-API-Key':'c44b6fd31135e76ee2cdfbf5cfb95d63152a89952af9fe697d9b7e72a556f7c4'
                 },
                 data: {
                     "params": [
@@ -35,7 +35,7 @@
                         "ERROR_CODE": "varchar",
                         "MESSAGE": "varchar"
                     },
-                    "wrapper": "record"
+                    "wrapper": "resource"
                 }
 
 

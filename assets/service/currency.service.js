@@ -9,14 +9,15 @@
 
     function CurrencyService($http, DREAM_FACTORY_URL) {
         var service = {};
-        $http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'qianApp'; //default header for X-DreamFactory-Application-Name
+        //$http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'qianApp'; //default header for X-DreamFactory-Application-Name
+        //$http.defaults.headers.common['X-DreamFactory-API-Key'] = 'c44b6fd31135e76ee2cdfbf5cfb95d63152a89952af9fe697d9b7e72a556f7c4';
 
         service.GetListCurrency = GetListCurrency;
         return service;
 
         function GetListCurrency() {
 
-            var url = DREAM_FACTORY_URL + "/rest/qian/_proc/fetchRates";
+            var url = DREAM_FACTORY_URL + "/_proc/fetchRates";
             var data = {
                 "params": [
                     {
@@ -45,7 +46,7 @@
                 method: "POST",
                 url: url,
                 headers: {
-                    'X-DreamFactory-Application-Name': "myapp"
+                    'X-DreamFactory-API-Key':'c44b6fd31135e76ee2cdfbf5cfb95d63152a89952af9fe697d9b7e72a556f7c4'
                 },
                 data: data
 
