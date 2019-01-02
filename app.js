@@ -5,12 +5,13 @@
         .module('qianApp', ['ngRoute', 'ngCookies','ui.router','ui.bootstrap','oc.lazyLoad'])
         .config (config)
         //.constant('DREAM_FACTORY_URL', 'https://sgproject001.bit-clicks.com:443')
-        .constant('DREAM_FACTORY_URL', 'http://192.168.8.48/api/v2/qiandb')
+        //.constant('DREAM_FACTORY_URL', 'http://192.168.8.48/api/v2/qiandb')
+        .constant('DREAM_FACTORY_URL', 'https://arjuna.bit-clicks.com/api/v2/qiandb')
         .run(run)
         .controller('mainController', mainController);
 
 
-
+        //MetronicApp.constant('DREAM_FACTORY_URL', 'https://arjuna.bit-clicks.com/api/v2/qiandb');
     config.$inject = ['$routeProvider' ];
     function config($routeProvider) {
 
